@@ -1,0 +1,55 @@
+contact: 
+  name: 
+  phone: 
+  mail: 
+  telegram: 
+  linkedin: 
+  github: 
+  website: 
+summary: 
+education:
+  - name: 
+    url: 
+    degree: 
+    location: 
+    duration: 
+    thesis:
+      title:
+      url:
+    gpa: 
+    coursework: 
+experience:
+  - company: 
+      name: 
+      url: 
+      location: 
+    roles:
+      - team: 
+        position: 
+        duration: 
+        tags:
+          -
+        summary:
+          -
+projects:
+  - name: 
+    url: 
+    duration:
+    tags:
+      -
+    summary:
+      -
+  - name: 
+    url: 
+    tags:
+      -
+    summary:
+      -
+skills:
+  languages:
+    -
+  libraries:
+    -
+  tools:
+    -
+
