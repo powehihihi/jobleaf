@@ -182,7 +182,7 @@
 \begin{center}\textbf{\Large {{ .Name }} }\end{center}
 \vspace{-12pt}
 \begin{center}
-{{ .Mobile }} 
+{{ if .Mobile }}{{ \faPhone \space .Mobile }} {{ end }}
 {{ if .Mail }} \MYhref{mailto:{{ .Mail }} }{ \faEnvelope \space {{ .Mail }} } \quad {{ end }}
 {{ if .Github }} \MYhref{ https://github.com/{{ .Github }} }{ \faGithub \space {{ .Github }} } \quad {{ end }}
 {{ if .Linkedin }} \MYhref{ https://linkedin.com/in/{{ .Linkedin }} }{ \faLinkedin \space {{ .Linkedin }} } \quad {{ end }}

@@ -1,0 +1,105 @@
+contact: 
+  name: Lorem Ipsum
+  phone: +3 (141) 592-65-35
+  mail: lorem@ipsum.com
+  telegram: loremTg
+  linkedin: ipsumIn
+  github:   lxremIpsxm
+  website:  lorem.ipsum
+summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel ipsum id est feugiat gravida venenatis ac dui. Phasellus sed commodo odio. Curabitur viverra dui in sapien tempor, vitae posuere odio ultricies. Nullam in.
+education:
+  - name: Lorem Ipsum University
+    url: lorem.ipsum.uni
+    degree: Bachelor of Lorem Ipsum
+    location: Lorem, Ipsum
+    duration: Lorem - Ipsum
+    thesis:
+      title: Scientific approaches in Prompt Engineering
+      url:  lorem.ipsum.uni/lorem/ipsum
+    gpa: 3.14/4
+    coursework: Lorem, Ipsum, Dolor, Sit, Amet 
+experience:
+  - company: 
+      name: Lorem Ipsum TTM (To The Moon)
+      url: lorem.ipsum.ttm
+      location: Planet Earth
+    roles:
+      - team: Lorem Ipsum
+        position: Generative AI assistant
+        duration: December 2023 - Present
+        tags:
+          - Lorem
+          - Ipsum
+          - Dolor
+          - Sit
+          - Chat GPT
+        summary:
+          - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum tellus ut nisi molestie.
+          - Accomplished [LOREM] as measured by [IPSUM], by doing [LOREM IPSUM].
+          - Lorem ipsum A as sit amet by B , by consectetur adipiscing C.
+      - team: Dolor Sit
+        position: Lorem Enginner (not a frameworker)
+        duration: 1000-7
+        tags:
+          - LoRemact 18.2.0-beta
+          - LoRemact 18.1.0
+          - LoRemact 18.1.5
+          - LoRemact 18.0.0
+        summary:
+          - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum tellus ut nisi molestie.
+          - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum tellus ut nisi molestie.
+          - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum tellus ut nisi molestie.
+  - company: 
+      name: Ipsum Lorem
+      url: ipsum.lorem
+      location: Planet Mars
+    roles:
+      - team: Ipsum
+        position: Lorem
+        duration: 2003 - 2020
+        tags:
+          - Amet
+          - Sit
+          - Dolor
+          - Ipsum
+          - Lorem
+        summary:
+          - Fired for meming all day long
+          - Fired for meming all my life
+          - Fired for meming orem ipsum
+projects:
+  - name: Nonsense generator
+    url: project.lorem.ipsum
+    duration: Summer 2023
+    tags:
+      - Gmail
+      - Excel
+    summary:
+      - Designed and implemented loremipsumdeolorsitamet algorithm
+      - Simplified solution by deleting all code, than sending emails to help@lipsum.com asking them to generate nonsense for me.
+      - Optimized my computer's CPU usage by sending emails from phone.
+      - Filled my own resume with nonsense and got rejected 1337 times!
+  - name: Chat GPT Competitor
+    url: ai.lorem.ipsum
+    tags:
+      - Chat GPT
+      - Math
+      - Calculus
+      - Linear Algebra
+      - Chaos Theory
+      - Number Theory
+      - The Big Bang Theory
+    summary:
+      - Discreditted OpenAI by asking them for last 10 digits of Pi, than memed about it for a week
+      - Never ask Gigachat about Rust 
+skills:
+  languages:
+    - English, Bri'ish
+  libraries:
+    - Bodleian Old Library
+    - The Sir Duncan Rice Library
+    - Gladstone's Library
+  tools:
+    - Chainsaw (watched this anime twice) 
+    - Hammer (my dad owns Harley)
+
