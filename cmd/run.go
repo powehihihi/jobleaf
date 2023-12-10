@@ -4,13 +4,11 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"strings"
-	"text/template"
 
 	"github.com/spf13/cobra"
-	"gopkg.in/yaml.v3"
 
-	"github.com/powehihihi/jobleaf/internal/resume"
+	"github.com/powehihihi/jobleaf/internal/lib"
+	"github.com/powehihihi/jobleaf/internal/user"
 )
 
 // runCmd represents the run command
@@ -20,16 +18,16 @@ var runCmd = &cobra.Command{
 	// TODO: Long....
 	Long: "",
 	RunE: func(_ *cobra.Command, _ []string) error {
-		var err error
-
 		if input == "" {
-			input, err = GetUserResumeYamlPath()
+			cfg, err := user.Init(nil)
 			if err != nil {
-				return fmt.Errorf("GetUserResumeYamlPath: %w", err)
+				return fmt.Errorf("error while initializing user config: %w", err)
 			}
+
+			input = cfg.UserResumePath()
 		}
 
-		resume, err := LoadResume(input)
+		resume, err := lib.LoadFromFile(input)
 		if err != nil {
 			return fmt.Errorf("LoadResume: %w", err)
 		}
@@ -48,18 +46,8 @@ var runCmd = &cobra.Command{
 		defer writer.Close()
 
 		if genLatex {
-			tmpl, err := template.New("resume.tmpl.tex").
-				Funcs(template.FuncMap{"JoinWithComa": func(strs []string) string {
-					return strings.Join(strs, ", ")
-				}}).
-				Parse(LatexTemplate)
-			if err != nil {
-				return fmt.Errorf("parsing template error: %w", err)
-			}
-
-			err = tmpl.Execute(writer, resume)
-			if err != nil {
-				return fmt.Errorf("executing template: %w", err)
+			if err := lib.Generate(LatexTemplate, writer, resume); err != nil {
+				return fmt.Errorf("lib.Generate: %w", err)
 			}
 		}
 
@@ -81,37 +69,4 @@ func init() {
 	flags.StringVarP(&input, "input", "i", "", "path to your resume.yaml")
 	flags.StringVarP(&output, "output", "o", "", "where to put generated resume")
 	flags.BoolVar(&genLatex, "latex", true, "where to put generated resume")
-}
-
-func LoadResume(path string) (*resume.Resume, error) {
-	var resume resume.Resume
-
-	file, err := os.ReadFile(path)
-	if err != nil {
-		return nil, fmt.Errorf("os.Open(%s): %w", path, err)
-	}
-
-	if err := yaml.Unmarshal(file, &resume); err != nil {
-		return nil, fmt.Errorf("yaml.Unmarshal(%s, {}): %w", file, err)
-	}
-
-	return &resume, nil
-}
-
-func GetJobleafDirPath() (string, error) {
-	configPath, err := os.UserConfigDir()
-	if err != nil {
-		return "", fmt.Errorf("os.UserConfigDir: %w", err)
-	}
-
-	return configPath + "/jobleaf", nil
-}
-
-func GetUserResumeYamlPath() (string, error) {
-	dir, err := GetJobleafDirPath()
-	if err != nil {
-		return "", fmt.Errorf("GetJobleafDirPath: %w", err)
-	}
-
-	return dir + "/resume.yaml", nil
 }
