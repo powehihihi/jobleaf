@@ -1,4 +1,4 @@
-package resume
+package model
 
 type Resume struct {
 	Contact    *Contact
