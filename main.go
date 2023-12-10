@@ -16,7 +16,7 @@ func main() {
 var (
 	//go:embed examples/empty.yaml
 	blankResumeYaml []byte
-	//go:embed template/resume.tmpl.tex
+	//go:embed templates/resume.tmpl.tex
 	latexTemplate string
 )
 

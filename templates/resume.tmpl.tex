@@ -12,7 +12,7 @@
   {{ template "experience" .Experience }}
   {{ template "projects" .Projects }}
   {{ template "education" .Education }}
-  {{ template "skills" . }}
+  {{ template "skills" .Skills }}
 
 \end{document}
 {{ end }}
@@ -182,7 +182,7 @@
 \begin{center}\textbf{\Large {{ .Name }} }\end{center}
 \vspace{-12pt}
 \begin{center}
-{{ if .Mobile }}{{ \faPhone \space .Mobile }} {{ end }}
+{{ if .Mobile }} \faPhone \space {{ .Mobile }} {{ end }}
 {{ if .Mail }} \MYhref{mailto:{{ .Mail }} }{ \faEnvelope \space {{ .Mail }} } \quad {{ end }}
 {{ if .Github }} \MYhref{ https://github.com/{{ .Github }} }{ \faGithub \space {{ .Github }} } \quad {{ end }}
 {{ if .Linkedin }} \MYhref{ https://linkedin.com/in/{{ .Linkedin }} }{ \faLinkedin \space {{ .Linkedin }} } \quad {{ end }}
@@ -303,9 +303,9 @@
 \section{Skills}
  \resumeSubHeadingListStart
  \begin{tabular}{ll}
-{{ if .Skills.Languages }} \textbf{Languages:} & \quad {{ JoinWithComa .Skills.Languages }} \\ {{ end }}
-{{ if .Skills.Libraries }} \textbf{Libraries:} & \quad {{ JoinWithComa .Skills.Libraries }} \\ {{ end }}
-{{ if .Skills.Tools }} \textbf{Tools:} & \quad {{ JoinWithComa .Skills.Tools }} \\ {{ end }}
+{{ if .Languages }} \textbf{Languages:} & \quad {{ JoinWithComa .Languages }} \\ {{ end }}
+{{ if .Libraries }} \textbf{Libraries:} & \quad {{ JoinWithComa .Libraries }} \\ {{ end }}
+{{ if .Tools }} \textbf{Tools:} & \quad {{ JoinWithComa .Tools }} \\ {{ end }}
 \end{tabular}
  \resumeSubHeadingListEnd
 {{ end }}
