@@ -13,19 +13,44 @@ This piece of art is generated from [lorem.yaml](examples/lorem.yaml):
 ![cool resume](https://powehihihi.github.io/lorem_resume.jpg)
 
 ### Getting started
-First of all, download jobleaf (it's cli btw)
+Install jobleaf:
 ```
 go install github.com/powehihihi/jobleaf@latest
 ```
-Optional - you can create blank resume.yaml in your config directory:
+
+Initialize and fill resume.yaml
 ```
-jobleaf init
+jobleaf init --edit # you might put your favourite editor here
 ```
 
-Now, RUN:
+Generate latex code and...
+
+...print to stdout:
 ```
-jobleaf run --input PATH/TO/YAML --output WHERE/PUT/TEX
+jobleaf run 
 ```
+...save to clipboard
+```
+# linux with wayland
+jobleaf run | wl-copy
+```
+```
+# linux with xorg
+jobleaf run | xclip
+```
+```
+# windows
+jobleaf run | clip
+```
+```
+# mac
+jobleaf run | pbcopy
+```
+...save to file
+```
+jobleaf run --output WHERE/PUT/TEX
+```
+
 
 ### Using your own template
 Jobleaf uses ```text/template``` for code generation. Adapting your template to my resume format shouldn't be hard. However, it's too boring. Please open an issue, i'll help you.
@@ -37,8 +62,6 @@ I really like this tiny project of mine, i'm planning to add:
 - [ ] Clear example of how to use golang ```text/template```
 - [ ] HTML/markdown templates
 - [ ] What if... TUI resume template
-
-Also, code is a mess now. That's the first thing i'll fix.
 
 ### Special thanks
 [main template](template/resume.tmpl.tex) is a fork of [Muhammadjon's resume](https://github.com/mrhakimov/resume). He did a great job!
