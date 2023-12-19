@@ -29,16 +29,13 @@ var initCmd = &cobra.Command{
 
 			switch runtime.GOOS {
 			case "windows":
-				arguments = []string{"cmd", "/C", "editor placeholder"}
+				arguments = []string{"cmd", "/C", "notepad"}
 			default:
-				arguments = []string{"$EDITOR"}
+				defaultEditor, _ := os.LookupEnv("EDITOR")
+				arguments = []string{defaultEditor}
 			}
 
 			editorIndex := len(arguments) - 1
-
-			if runtime.GOOS == "windows" {
-				arguments[editorIndex] = "notepad"
-			}
 
 			if len(args) > 0 {
 				arguments[editorIndex] = args[0]
