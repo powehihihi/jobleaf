@@ -1,10 +1,13 @@
-contact: 
+# you can safely delete any field you don't want to fill
+contact:
   name: 
   mobile: 
   mail: 
+  # you should 'https://' and url, just use your nickname
   telegram: 
   linkedin: 
   github: 
+  # you should omit 'https://'
   website: 
 summary: 
 education:
@@ -13,6 +16,7 @@ education:
     degree: 
     location: 
     duration: 
+    # delete thesis if you don't need it
     thesis:
       title:
       url:
